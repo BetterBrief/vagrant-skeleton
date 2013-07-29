@@ -10,6 +10,7 @@ sudo chkconfig mysqld on
 #Copy new config files
 sudo cp -f /vagrant/environment/httpd.conf /etc/httpd/conf/httpd.conf
 sudo cp -f /vagrant/environment/php.ini /etc/php.ini
+sudo cp -f /vagrant/environment/_ss_environment.php /var/www/_ss_environment.php
 
 #Start / restart servers
 sudo service httpd restart
@@ -22,3 +23,4 @@ sudo service iptables restart
 #Repoint /var/www/html to /vagrant/html
 sudo rm -rf /var/www/html
 sudo ln -s /vagrant/html /var/www/html
+sudo cp -f /vagrant/environment/ /var/www/html
