@@ -17,10 +17,10 @@ Vagrant.configure("2") do |config|
   #---Networking---
 
   # Port forward 80 to 8080
-  #config.vm.network :forwarded_port, guest: 80, host: 8080
+  config.vm.network :forwarded_port, guest: 80, host: 8080
 
   #Uncomment this if you want bridged network functionality
-  config.vm.network :public_network
+  #config.vm.network :public_network
 
   #Install lamp and so on
   #In future will probably swap this out with something like Puppet

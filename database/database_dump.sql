@@ -1,0 +1,2 @@
+CREATE DATABASE  IF NOT EXISTS `vagrant` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `vagrant`;
