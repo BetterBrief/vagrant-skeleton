@@ -4,7 +4,7 @@
 #Apache, PHP & MySQL
 if [ ! -f ~/runbefore ]
 then
-	sudo yum install -y httpd mysql-server php php-common php-pdo php-mysql php-session php-dom php-gd2 php-fileinfo php-hash php-iconv php-mbstring  php-simplexml php-tokenizer php-xml
+	sudo yum install -y httpd mysql-server php php-common php-pdo php-mysql php-session php-dom php-gd php-fileinfo php-hash php-iconv php-mbstring  php-simplexml php-tokenizer php-xml
 	sudo chkconfig httpd on
 	sudo chkconfig mysqld on
 fi
