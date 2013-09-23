@@ -5,8 +5,10 @@ define('SS_DATABASE_CLASS','MySQLDatabase');
 define('SS_DATABASE_TIMEZONE','+00:00');
 define('SS_DATABASE_USERNAME', 'root');
 define('SS_DATABASE_PASSWORD', '');
-define('SS_DATABASE_NAME', 'vagrant');
 //set the DB name
+define('SS_DATABASE_NAME', 'vagrant');
+global $database;
+$database = SS_DATABASE_NAME;
 
 //define('SS_DATABASE_SUFFIX', '_dev');
 define('SS_ENVIRONMENT_TYPE', 'dev');
