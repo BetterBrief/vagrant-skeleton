@@ -15,6 +15,20 @@ We use as much automation as possible during provisioning so that our scripts ca
 
 The main purpose for this skeleton is for developing [SilverStripe](http://silverstripe.org) sites (as that's our primary framework) so we include a basic environment file for that. However, the skeleton can easily be adapted for any other framework that you want to host on CentOS
 
+## Usage
+
+To get up and running is very simple.
+
+1. Add a SQL dump to the `database` folder with the name of the database the same as the filename
+2. Checkout code to folder `www`
+3. Go to the command line and `# vagrant up`
+
+This will run the default webserver with the default php modules we need installed. It will also pull in the database(s) automatically.
+
+### Customisations
+
+Edit the `Vagrantfile` to enable or disable install scripts as they are required.
+
 ## Included scripts and software
 
 ### Software
