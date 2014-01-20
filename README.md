@@ -19,8 +19,9 @@ The main purpose for this skeleton is for developing [SilverStripe](http://silve
 
 To get up and running is very simple.
 
-1. Add a SQL dump to the `database` folder with the name of the database the same as the filename
-2. Checkout code to folder `www`
+0. Copy this repo to a new folder where you develop
+1. Add SQL dump(s) to the `database` folder with the name of the database the same as the filename
+2. Checkout your PHP code to folder `www` (this is the webroot)
 3. Go to the command line and `# vagrant up`
 
 This will run the default webserver with the default php modules we need installed. It will also pull in the database(s) automatically.
