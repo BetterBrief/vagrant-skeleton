@@ -15,6 +15,13 @@ We use as much automation as possible during provisioning so that our scripts ca
 
 The main purpose for this skeleton is for developing [SilverStripe](http://silverstripe.org) sites (as that's our primary framework) so we include a basic environment file for that. However, the skeleton can easily be adapted for any other framework that you want to host on CentOS
 
+## Requirements
+
+You can use this system on any computer that can run the following software, it's completely platform independant.
+
+- [VirtualBox](//www.virtualbox.org/wiki/Downloads)
+- [Vagrant](//www.vagrantup.com/downloads)
+
 ## Usage
 
 To get up and running is very simple.
