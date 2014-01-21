@@ -1,3 +1,4 @@
+#!/bin/bash
 
 echo "Installing PHP developer and pear... (for PECL and compiling)"
 yum -y install php-devel php-pear

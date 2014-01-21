@@ -1,4 +1,4 @@
-##!/bin/bash
+#!/bin/bash
 
 echo "Setting up grunt watch startup script (depends on grunt.sh)"
 
