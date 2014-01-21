@@ -7,6 +7,11 @@ This is the Vagrant skeleton that we use at [Better Brief](//betterbrief.co.uk).
 
 We're using a CentOS 6.5 OS, image from [puppet labs](http://puppet-vagrant-boxes.puppetlabs.com/) (thanks)
 
+However, there shouldn't be much issue using these scrips on the following OS's:
+- RHEL
+- Fedora
+- Amazon Linux
+
 ## Automation and provisioning
 
 We use as much automation as possible during provisioning so that our scripts can be used on other environments and not just on Vagrant boxes.
