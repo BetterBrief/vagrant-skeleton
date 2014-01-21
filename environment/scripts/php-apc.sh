@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Installing APC for php"
-yum install -y yum install php-pear php-devel httpd-devel pcre-devel gcc make
+yum install -y php-pear php-devel httpd-devel pcre-devel gcc make
 
 echo "Installing apc module for PHP"
 pecl install apc
