@@ -5,7 +5,7 @@ This is the Vagrant skeleton that we use at [Better Brief](//betterbrief.co.uk).
 
 ## Guest OS
 
-We're using a CentOS 6.4 OS, image from [puppet labs](//github.com/puppetlabs/puppet-vagrant-boxes) (thanks)
+We're using a CentOS 6.5 OS, image from [puppet labs](http://puppet-vagrant-boxes.puppetlabs.com/) (thanks)
 
 ## Automation and provisioning
 
