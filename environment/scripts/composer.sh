@@ -12,7 +12,7 @@ echo "Composer installed"
 echo "Installing git due to composer dependency"
 yum install -y git
 
-cd /vagrant/www/
+cd /var/www/html
 if [ -r "composer.json" ]
 then
 	echo "Installing declared packages from composer.json"
