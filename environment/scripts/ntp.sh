@@ -10,7 +10,7 @@ ntpdate pool.ntp.org
 
 # Set timezone
 rm -f /etc/localtime
-ln -s /usr/share/zoneinfo/America/New_York /etc/localtime
+ln -s /usr/share/zoneinfo/UTC /etc/localtime
 
 
 echo 'NTP is setup and configured'
