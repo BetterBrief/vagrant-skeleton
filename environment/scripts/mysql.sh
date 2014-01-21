@@ -10,7 +10,7 @@ echo "Starting MySQL service"
 service mysqld start
 
 echo "Add port 3306 to iptables"
-iptables -A INPUT -m state --state NEW -m tcp -p tcp --dport 3306 -j ACCEPT
+iptables -I INPUT 1 -p tcp --dport 3306 -j ACCEPT
 /sbin/service iptables save
 
 # find the DB folder
