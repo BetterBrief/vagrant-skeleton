@@ -15,16 +15,16 @@
 
 
 echo "Installing Apache"
-sudo yum install -y httpd
+yum install -y httpd
 
 echo "Adding Apache service to autostart"
-sudo chkconfig httpd on
+chkconfig httpd on
 
 echo "Copying httpd config"
-sudo cp -f /vagrant/environment/config/httpd.conf /etc/httpd/conf/httpd.conf
+cp -f /vagrant/environment/config/httpd.conf /etc/httpd/conf/httpd.conf
 
 echo "Mounting webroot"
-sudo rm -rf /var/www/html
+rm -rf /var/www/html
 # pick the webroot
 if [ -d /vagrant/www ]
 then
@@ -48,7 +48,8 @@ echo "Starting httpd service"
 service httpd start
 
 echo "Add port 80 to iptables"
-iptables -A INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT
+iptables -I INPUT 1 -p tcp --dport 80 -j ACCEPT
+iptables -I INPUT 1 -p tcp --dport 443 -j ACCEPT
 service iptables save
 
 echo "Apache installed"
