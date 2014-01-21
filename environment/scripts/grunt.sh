@@ -3,7 +3,7 @@
 echo "Installing Grunt & Grunt CLI by NPM"
 sudo npm install -y -g grunt-cli
 
-cd /vagrant/www/
+cd /var/www/html
 if [ -r "package.json" ]
 then
 	echo "Installing declared packages from package.json"
