@@ -3,7 +3,7 @@ MONGODB_REPO="/etc/yum.repos.d/mongodb.repo"
 
 echo "Add the MongoDB Repo"
 if [ -f ${MONGODB_REPO} ]; then
-     echo "$MONGODB_REPO found"
+    echo "$MONGODB_REPO found"
 else
 cat << 'EOF' > ${MONGODB_REPO}
 [mongodb]

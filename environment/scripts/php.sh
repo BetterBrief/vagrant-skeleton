@@ -7,6 +7,6 @@ echo "Copying php.ini"
 cp -f /vagrant/environment/config/php.ini /etc/php.ini
 
 echo "Restarting Apache"
-service httpd restart
+/sbin/service httpd restart
 
 echo "PHP installed"

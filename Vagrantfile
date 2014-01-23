@@ -29,7 +29,9 @@ Vagrant.configure("2") do |config|
   config.vm.provision :shell, :path => "environment/scripts/iptables.sh"
   config.vm.provision :shell, :path => "environment/scripts/apache.sh"
   config.vm.provision :shell, :path => "environment/scripts/php.sh"
+  #config.vm.provision :shell, :path => "environment/scripts/php-55.sh"
   config.vm.provision :shell, :path => "environment/scripts/mysql.sh"
+  #config.vm.provision :shell, :path => "environment/scripts/mariadb-5.5.sh"
   #config.vm.provision :shell, :path => "environment/scripts/php-geoip.sh"
   config.vm.provision :shell, :path => "environment/scripts/php-phpunit.sh"
   #config.vm.provision :shell, :path => "environment/scripts/php-apc.sh"
@@ -42,6 +44,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision :shell, :path => "environment/scripts/composer.sh"
   #config.vm.provision :shell, :path => "environment/scripts/libjpeg-jpegoptim.sh"
   #config.vm.provision :shell, :path => "environment/scripts/optipng.sh"
+  #config.vm.provision :shell, :path => "environment/scripts/sass.sh"
   config.vm.provision :shell, :path => "environment/scripts/bootstrap.sh"
 
 end

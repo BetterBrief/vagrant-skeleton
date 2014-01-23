@@ -1,13 +1,22 @@
 #!/bin/bash
 
-echo "Installing MySQL"
-yum install -y mysql-server
+echo "Setting up MariaDB"
+echo "Writing MariaDB-5.5.repo to /etc/yum.repos.d"
+echo "# MariaDB 5.5 CentOS repository list http://mariadb.org/mariadb/repositories/
+[mariadb]
+name = MariaDB
+baseurl = http://yum.mariadb.org/5.5/centos6-amd64
+gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
+gpgcheck=1" > /etc/yum.repos.d/MariaDB-5.5.repo
 
-echo "Adding MySQL service to autostart"
-chkconfig mysqld on
+echo "Installing MariaDB server and client. Note there is no progress bar."
+yum install -y MariaDB-server MariaDB-client
 
-echo "Starting MySQL service"
-/sbin/service mysqld start
+echo "Adding MariaDB/MySQL service to autostart"
+chkconfig mysql on
+
+echo "Starting MariaDB/MySQL service"
+/sbin/service mysql start
 
 echo "Add port 3306 to iptables"
 iptables -I INPUT 1 -p tcp --dport 3306 -j ACCEPT
@@ -47,4 +56,4 @@ echo "Databases imported"
 echo "Setting DB permissions for root"
 mysql -u root <<< "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION; FLUSH PRIVILEGES;"
 
-echo "MySQL installed"
+echo "MariaDB installed"

@@ -25,6 +25,6 @@ echo "Adding PHP extension"
 echo "extension=geoip.so" >> /etc/php.d/geoip.ini
 
 echo "Restarting Apache"
-service httpd restart
+/sbin/service httpd restart
 
 echo "GeoIP installed"

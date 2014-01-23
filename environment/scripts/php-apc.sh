@@ -11,6 +11,6 @@ echo "Adding APC to php config"
 echo "extension = apc.so" >> /etc/php.d/apc.ini
 
 echo "Restarting Apache"
-service httpd restart
+/sbin/service httpd restart
 
 echo "APC Installed"

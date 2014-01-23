@@ -30,7 +30,7 @@ iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
 #
 /sbin/service iptables save
 
-service iptables restart
+/sbin/service iptables restart
 #
 # List rules
 #
