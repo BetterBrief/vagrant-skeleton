@@ -33,7 +33,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision :shell, :path => "environment/scripts/mysql.sh"
   #config.vm.provision :shell, :path => "environment/scripts/mariadb-5.5.sh"
   #config.vm.provision :shell, :path => "environment/scripts/php-geoip.sh"
-  config.vm.provision :shell, :path => "environment/scripts/php-phpunit.sh"
+  #config.vm.provision :shell, :path => "environment/scripts/php-phpunit.sh"
   #config.vm.provision :shell, :path => "environment/scripts/php-xdebug.sh"
   #config.vm.provision :shell, :path => "environment/scripts/php-apc.sh"
   #config.vm.provision :shell, :path => "environment/scripts/mongo.sh"
