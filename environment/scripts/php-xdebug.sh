@@ -4,7 +4,7 @@ echo "Installing XDebug dependencies"
 yum install -y php-devel gcc gcc-c++ autoconf automake
 
 echo "Installing XDebug"
-pecl install -y Xdebug
+pecl install Xdebug
 
 echo "Ensuring XDebug is executable"
 chmod +x /usr/lib64/php/modules/xdebug.so
