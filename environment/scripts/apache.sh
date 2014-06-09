@@ -44,6 +44,11 @@ else
 fi
 ln -s /vagrant/$WEBROOT /var/www/html
 
+if [ -d /var/lib/php/session ]
+then
+	chown -R vagrant: /var/lib/php/session
+fi
+
 echo "Starting httpd service"
 service httpd start
 
