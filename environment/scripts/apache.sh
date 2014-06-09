@@ -45,7 +45,7 @@ fi
 ln -s /vagrant/$WEBROOT /var/www/html
 
 echo "Starting httpd service"
-service httpd start
+service httpd restart
 
 echo "Add port 80 to iptables"
 iptables -I INPUT 1 -p tcp --dport 80 -j ACCEPT

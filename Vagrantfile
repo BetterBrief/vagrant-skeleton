@@ -27,9 +27,9 @@ Vagrant.configure("2") do |config|
   #Install lamp and so on
   #In future will probably swap this out with something like Puppet
   config.vm.provision :shell, :path => "environment/scripts/iptables.sh"
-  config.vm.provision :shell, :path => "environment/scripts/apache.sh"
   config.vm.provision :shell, :path => "environment/scripts/php.sh"
   #config.vm.provision :shell, :path => "environment/scripts/php-55.sh"
+  config.vm.provision :shell, :path => "environment/scripts/apache.sh"
   config.vm.provision :shell, :path => "environment/scripts/mysql.sh"
   #config.vm.provision :shell, :path => "environment/scripts/mariadb-5.5.sh"
   #config.vm.provision :shell, :path => "environment/scripts/php-geoip.sh"
