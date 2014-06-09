@@ -24,7 +24,6 @@ echo "Copying httpd config"
 cp -f /vagrant/environment/config/httpd.conf /etc/httpd/conf/httpd.conf
 
 echo "Mounting webroot"
-rm -rf /var/www/html
 # pick the webroot
 if [ -d /vagrant/www ]
 then
@@ -38,11 +37,13 @@ elif [ -d /vagrant/webroot ]
 then
 	echo "Found folder webroot, using as webroot"
 	WEBROOT="webroot"
-else
-	echo "Can't find webroot. Quitting..."
-	exit 1
 fi
-ln -s /vagrant/$WEBROOT /var/www/html
+
+if [ -d /vagrant/$WEBROOT ]
+then
+	rm -rf /var/www/html
+	ln -s /vagrant/$WEBROOT /var/www/html
+fi
 
 if [ -d /var/lib/php/session ]
 then
