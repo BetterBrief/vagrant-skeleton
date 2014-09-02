@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Installing XDebug dependencies"
-yum install -y php-devel gcc gcc-c++ autoconf automake
+yum install -y php-devel php-pear gcc gcc-c++ autoconf automake
 
 echo "Installing XDebug"
 pecl install Xdebug
