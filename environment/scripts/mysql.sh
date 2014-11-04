@@ -27,6 +27,26 @@ else
 	exit 1
 fi
 
+DEL_FILES=()
+#extract .sql.gz files - these need to be cleaned up afterwards!
+GZ_FILES=/vagrant/$DATABASE_FOLDER/*.sql.gz
+shopt -s nullglob
+for file in $GZ_FILES
+do
+	FILENAME=`basename $file .gz`
+	gunzip -c -v $file > /vagrant/$DATABASE_FOLDER/$FILENAME
+	DEL_FILES+=("/vagrant/$DATABASE_FOLDER/$FILENAME")
+done;
+
+BZ2_FILES=/vagrant/$DATABASE_FOLDER/*.sql.bz2
+shopt -s nullglob
+for file in $BZ2_FILES
+do
+	FILENAME=`basename $file .bz2`
+	bzip2 -dkc $file > /vagrant/$DATABASE_FOLDER/$FILENAME
+	DEL_FILES+=("/vagrant/$DATABASE_FOLDER/$FILENAME")
+done;
+
 DB_FILES=/vagrant/$DATABASE_FOLDER/*.sql
 shopt -s nullglob
 for file in $DB_FILES
@@ -38,6 +58,11 @@ do
 
 	echo "Importing database dump"
 	sed '/^CREATE DATABASE/d;/^USE/d' $file | mysql $DB_NAME -u root
+done;
+
+for file in $DEL_FILES
+do
+	rm -f $file
 done;
 
 echo "Databases imported"
