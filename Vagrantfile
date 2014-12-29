@@ -38,6 +38,7 @@ Vagrant.configure("2") do |config|
   #config.vm.provision :shell, :path => "environment/scripts/php-pear-phpunit.sh"
   #config.vm.provision :shell, :path => "environment/scripts/php-xdebug.sh"
   #config.vm.provision :shell, :path => "environment/scripts/php-apc.sh"
+  #config.vm.provision :shell, :path => "environment/scripts/php-mcrypt.sh"
   #config.vm.provision :shell, :path => "environment/scripts/mongo.sh"
   #config.vm.provision :shell, :path => "environment/scripts/php-mongo.sh"
   #config.vm.provision :shell, :path => "environment/scripts/ntp.sh"

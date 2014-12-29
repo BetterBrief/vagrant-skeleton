@@ -54,8 +54,9 @@ Edit the `Vagrantfile` to enable or disable install scripts as they are required
 |mariadb-5.5.sh       |Software |MariaDB            |5.5|MariaDB.org|Installs MariaDB, opens port 3306, imports dumps in /vagrant/database
 |php-geoip.sh         |Software |PHP GeoIP extension|-|EPEL|Installs PHP's GeoIP functions
 |php-phpunit.sh       |Software |PHP PHPUnit library|3.7.x|PEAR|Installs PEAR, then uses PEAR to install PHPUnit
-|php-xdebug.sh        |Software |PHP XDebug         |-|CentOS, PECL|Installs XDebug along with its automake, gcc, and php-devel 
+|php-xdebug.sh        |Software |PHP XDebug         |-|CentOS, PECL|Installs XDebug along with its automake, gcc, and php-devel
 |php-apc.sh           |Software |PHP APC            |-|CentOS, PECL|Installs APC. Only needed for PHP 5.3.x as 5.5 has it built-in.
+|php-mcrypt.sh        |Software |PHP Mcrypt extension|-|EPEL|Installs Mcrypt. Only needed for PHP 5.3.x as 5.5 has it built-in.
 |mongo.sh             |Software |MongoDB            |10gen|MongoDB.org|Installs the MongoDB NoSQL database
 |php-mongo.sh         |Software |PHP MongoDB|-|PEAR, PECL|Installs the PHP MongoDB extension
 |ntp.sh               |Config   |ntp|-|CentOS|Installs NTP which handles time management
