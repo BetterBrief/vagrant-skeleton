@@ -21,6 +21,8 @@ if [ -f "framework/sake" ]
 then
 	chmod +x framework/sake
 	echo "sake is now executable"
+	framework/sake installsake
+	echo "sake in installed and global"
 fi
 
 echo "SilverStripe helper tasks complete"
