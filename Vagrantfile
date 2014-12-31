@@ -45,6 +45,7 @@ Vagrant.configure("2") do |config|
   #config.vm.provision :shell, :path => "environment/scripts/node.sh"
   #config.vm.provision :shell, :path => "environment/scripts/grunt.sh"
   #config.vm.provision :shell, :path => "environment/scripts/grunt-watch.sh"
+  #config.vm.provision :shell, :path => "environment/scripts/gulp.sh"
   config.vm.provision :shell, :path => "environment/scripts/composer.sh"
   #config.vm.provision :shell, :path => "environment/scripts/libjpeg-jpegoptim.sh"
   #config.vm.provision :shell, :path => "environment/scripts/optipng.sh"
