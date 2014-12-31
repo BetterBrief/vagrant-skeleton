@@ -50,6 +50,7 @@ Vagrant.configure("2") do |config|
   #config.vm.provision :shell, :path => "environment/scripts/optipng.sh"
   #config.vm.provision :shell, :path => "environment/scripts/sass.sh"
   config.vm.provision :shell, :path => "environment/scripts/silverstripe-tasks.sh"
+  #config.vm.provision :shell, :path => "environment/scripts/sspak.sh"
   config.vm.provision :shell, :path => "environment/scripts/bootstrap.sh"
   config.vm.provision :shell, :path => "environment/scripts/always.sh", run: "always"
 
