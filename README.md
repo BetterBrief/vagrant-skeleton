@@ -64,7 +64,7 @@ Edit the `Vagrantfile` to enable or disable install scripts as they are required
 |grunt.sh             |Software |Grunt|-|NPM|Installs the NodeJS based task runner, grunt.
 |grunt-watch.sh       |Software |Grunt watch daemon|-|-|Sets up an automatic `grunt watch` task that will run on `vagrant up`
 |composer.sh          |Software |Composer|-|getcomposer.org|Installs PHP's composer package manager
-|sspak.sh         	  |Software |SSPak|-|https://github.com/silverstripe/sspak|Asset and database snapshot tool for SilverStripe
+|sspak.sh         	  |Software |SSPak|-|Installs SSPak|Asset and database snapshot tool for SilverStripe ([link](//github.com/silverstripe/sspak))
 |libjpeg-jpegoptim.sh |Software |libjpeg; jpegoptim|-|CentOS; CentALT|Installs libjpeg and jpegoptim for use with compressing JPEG images
 |optipng.sh           |Software |optipng|-|CentOS|Installs optipng for use with compressing PNG images
 |sass.sh              |Software |Ruby, RubyGems, SASS|3.2.10|CentOS|Installs SASS 3.2.10, a handy CSS pre processor
