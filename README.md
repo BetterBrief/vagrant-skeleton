@@ -44,32 +44,32 @@ Edit the `Vagrantfile` to enable or disable install scripts as they are required
 
 ## Included scripts and software
 
-|Script               |Purpose  |Software|Version|Repo|Description|
-|---------------------|---------|--------|-------|----|-----------|
-|iptables.sh          |Config   |-                  |-|-|Opens port 22 so you can access your vagrant box
-|apache.sh            |Software |Apache             |2.x|CentOS|Mounts the www _or_ public_html dir to webroot, installs Apache, opens ports 80 and 443
-|php-53.sh            |Software |PHP                |5.3.x|CentOS|Installs PHP 5.3, restarts Apache
-|php-55.sh            |Software |PHP                |5.5.x|Webtatic EL6|Installs PHP 5.5, restarts Apache
-|php-56.sh            |Software |PHP                |5.6.x|Webtatic EL6|Installs PHP 5.6, restarts Apache
-|mysql.sh             |Software |MySQL              |5.x|CentOS|Installs MySQL, opens port 3306, imports dumps in /vagrant/database
-|mariadb-5.5.sh       |Software |MariaDB            |5.5|MariaDB.org|Installs MariaDB, opens port 3306, imports dumps in /vagrant/database
-|php-geoip.sh         |Software |PHP GeoIP extension|-|EPEL|Installs PHP's GeoIP functions
-|php-phpunit.sh       |Software |PHP PHPUnit library|3.7.x|PEAR|Installs PEAR, then uses PEAR to install PHPUnit
-|php-xdebug.sh        |Software |PHP XDebug         |-|CentOS, PECL|Installs XDebug along with its automake, gcc, and php-devel
-|php-apc.sh           |Software |PHP APC            |-|CentOS, PECL|Installs APC. Only needed for PHP 5.3.x as 5.5 has it built-in.
-|php-mcrypt.sh        |Software |PHP Mcrypt extension|-|EPEL|Installs Mcrypt. Only needed for PHP 5.3.x as 5.5 has it built-in.
-|mongo.sh             |Software |MongoDB            |10gen|MongoDB.org|Installs the MongoDB NoSQL database
-|php-mongo.sh         |Software |PHP MongoDB|-|PEAR, PECL|Installs the PHP MongoDB extension
-|ntp.sh               |Config   |ntp|-|CentOS|Installs NTP which handles time management
-|node.sh              |Software |NodeJS|-|Fedora EPEL|Installs the NodeJS language and its package manager, NPM
-|grunt.sh             |Software |Grunt|-|NPM|Installs the NodeJS based task runner, grunt.
-|grunt-watch.sh       |Software |Grunt watch daemon|-|-|Sets up an automatic `grunt watch` task that will run on `vagrant up`
-|composer.sh          |Software |Composer|-|getcomposer.org|Installs PHP's composer package manager
-|sspak.sh         	  |Software |SSPak|-|Installs SSPak|Asset and database snapshot tool for SilverStripe ([link](//github.com/silverstripe/sspak))
-|libjpeg-jpegoptim.sh |Software |libjpeg; jpegoptim|-|CentOS; CentALT|Installs libjpeg and jpegoptim for use with compressing JPEG images
-|optipng.sh           |Software |optipng|-|CentOS|Installs optipng for use with compressing PNG images
-|sass.sh              |Software |Ruby, RubyGems, SASS|3.2.10|CentOS|Installs SASS 3.2.10, a handy CSS pre processor
-|bootstrap.sh         |Config   |-|-|-|Various bootstrap tasks and snag fixes
+|Script               |Name|Version|Repo|Description|
+|---------------------|--------|-------|----|-----------|
+|iptables.sh          |-       |-|-|Opens port 22 so you can access your vagrant box
+|apache.sh            |Apache             |2.x|CentOS|Mounts the www _or_ public_html dir to webroot, installs Apache, opens ports 80 and 443
+|php-53.sh            |PHP                |5.3.x|CentOS|Installs PHP 5.3, restarts Apache
+|php-55.sh            |PHP                |5.5.x|Webtatic EL6|Installs PHP 5.5, restarts Apache
+|php-56.sh            |PHP                |5.6.x|Webtatic EL6|Installs PHP 5.6, restarts Apache
+|mysql.sh             |MySQL              |5.x|CentOS|Installs MySQL, opens port 3306, imports dumps in /vagrant/database
+|mariadb-5.5.sh       |MariaDB            |5.5|MariaDB.org|Installs MariaDB, opens port 3306, imports dumps in /vagrant/database
+|php-geoip.sh         |PHP GeoIP extension|-|EPEL|Installs PHP's GeoIP functions
+|php-phpunit.sh       |PHP PHPUnit library|3.7.x|PEAR|Installs PEAR, then uses PEAR to install PHPUnit
+|php-xdebug.sh        |PHP XDebug         |-|CentOS, PECL|Installs XDebug along with its automake, gcc, and php-devel
+|php-apc.sh           |PHP APC            |-|CentOS, PECL|Installs APC. Only needed for PHP 5.3.x as 5.5 has it built-in.
+|php-mcrypt.sh        |PHP Mcrypt extension|-|EPEL|Installs Mcrypt. Only needed for PHP 5.3.x as 5.5 has it built-in.
+|mongo.sh             |MongoDB            |10gen|MongoDB.org|Installs the MongoDB NoSQL database
+|php-mongo.sh         |PHP MongoDB|-|PEAR, PECL|Installs the PHP MongoDB extension
+|ntp.sh               |ntp|-|CentOS|Installs NTP which handles time management
+|node.sh              |NodeJS|-|Fedora EPEL|Installs the NodeJS language and its package manager, NPM
+|grunt.sh             |Grunt|-|NPM|Installs the NodeJS based task runner, grunt.
+|grunt-watch.sh       |Grunt watch daemon|-|-|Sets up an automatic `grunt watch` task that will run on `vagrant up`
+|composer.sh          |Composer|-|getcomposer.org|Installs PHP's composer package manager
+|sspak.sh         	  |SSPak|-|Installs SSPak|Asset and database snapshot tool for SilverStripe ([link](//github.com/silverstripe/sspak))
+|libjpeg-jpegoptim.sh |libjpeg; jpegoptim|-|CentOS; CentALT|Installs libjpeg and jpegoptim for use with compressing JPEG images
+|optipng.sh           |optipng|-|CentOS|Installs optipng for use with compressing PNG images
+|sass.sh              |Ruby, RubyGems, SASS|3.2.10|CentOS|Installs SASS 3.2.10, a handy CSS pre processor
+|bootstrap.sh         |-|-|-|Various bootstrap tasks and snag fixes
 
 ## Environments
 
