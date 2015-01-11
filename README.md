@@ -33,7 +33,9 @@ To get up and running is very simple.
 
 0. Copy this repo to a new folder where you develop
 1. Add SQL dump(s) to the `database` folder with the name of the database the same as the filename
-2. Checkout your PHP code to folder `www` (this is the webroot)
+2. Checkout your PHP code to a webroot folder:
+  * `www` and `public_html` directories, where the full application lives inside the webroot (like SilverStripe), will be auto mounted
+  * `project/public` directories will be auto mounted, where `project` contains your application, and the `public` folder contains any public facing code, like Laravel apps.
 3. Go to the command line and `# vagrant up`
 
 This will run the default webserver with the default php modules we need installed. It will also pull in the database(s) automatically.
