@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Installing PHP and common modules"
+echo "Installing PHP 5.3 and common modules"
 yum install -y php php-common php-pdo php-mysql php-session php-dom php-gd php-fileinfo php-hash php-iconv php-mbstring php-simplexml php-tokenizer php-xml php-tidy
 
 echo "Copying php.ini"

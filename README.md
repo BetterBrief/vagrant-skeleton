@@ -48,8 +48,9 @@ Edit the `Vagrantfile` to enable or disable install scripts as they are required
 |---------------------|---------|--------|-------|----|-----------|
 |iptables.sh          |Config   |-                  |-|-|Opens port 22 so you can access your vagrant box
 |apache.sh            |Software |Apache             |2.x|CentOS|Mounts the www _or_ public_html dir to webroot, installs Apache, opens ports 80 and 443
-|php.sh               |Software |PHP                |5.3.x|CentOS|Installs PHP 5.3, restarts Apache
+|php-53.sh            |Software |PHP                |5.3.x|CentOS|Installs PHP 5.3, restarts Apache
 |php-55.sh            |Software |PHP                |5.5.x|Webtatic EL6|Installs PHP 5.5, restarts Apache
+|php-56.sh            |Software |PHP                |5.6.x|Webtatic EL6|Installs PHP 5.6, restarts Apache
 |mysql.sh             |Software |MySQL              |5.x|CentOS|Installs MySQL, opens port 3306, imports dumps in /vagrant/database
 |mariadb-5.5.sh       |Software |MariaDB            |5.5|MariaDB.org|Installs MariaDB, opens port 3306, imports dumps in /vagrant/database
 |php-geoip.sh         |Software |PHP GeoIP extension|-|EPEL|Installs PHP's GeoIP functions
