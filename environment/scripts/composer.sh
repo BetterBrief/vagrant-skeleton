@@ -26,5 +26,5 @@ then
 	echo "Installing declared packages from composer.json"
 	composer install
 else
-	echo "WARNING: There was no (readable) composer.json. Create one and run 'composer install' to install dependencies."
+	echo "WARNING: There was no (readable) composer.json. Create one and run 'composer install' to install dependencies." >& 2
 fi;
