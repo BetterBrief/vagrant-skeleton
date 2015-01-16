@@ -1,26 +1,13 @@
 #!/bin/bash
 
-echo "Setting up MariaDB"
-echo "Writing MariaDB-5.5.repo to /etc/yum.repos.d"
-echo "# MariaDB 5.5 CentOS repository list http://mariadb.org/mariadb/repositories/
-[mariadb]
-name = MariaDB
-baseurl = http://yum.mariadb.org/5.5/centos6-amd64
-gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
-gpgcheck=1" > /etc/yum.repos.d/MariaDB-5.5.repo
+echo "Installing MariaDB"
+yum install -y mariadb-server
 
-echo "Installing MariaDB server and client. Note there is no progress bar."
-yum install -y MariaDB-server MariaDB-client
+echo "Adding MariaDB service to autostart"
+systemctl enable mariadb.service
 
-echo "Adding MariaDB/MySQL service to autostart"
-chkconfig mysql on
-
-echo "Starting MariaDB/MySQL service"
-/sbin/service mysql start
-
-echo "Add port 3306 to iptables"
-iptables -I INPUT 1 -p tcp --dport 3306 -j ACCEPT
-/sbin/service iptables save
+echo "Starting MariaDB service"
+systemctl start mariadb.service
 
 # find the DB folder
 if [ -d /vagrant/database ]
@@ -36,6 +23,26 @@ else
 	exit 1
 fi
 
+DEL_FILES=()
+#extract .sql.gz files - these need to be cleaned up afterwards!
+GZ_FILES=/vagrant/$DATABASE_FOLDER/*.sql.gz
+shopt -s nullglob
+for file in $GZ_FILES
+do
+	FILENAME=`basename $file .gz`
+	gunzip -c -v $file > /vagrant/$DATABASE_FOLDER/$FILENAME
+	DEL_FILES+=("/vagrant/$DATABASE_FOLDER/$FILENAME")
+done;
+
+BZ2_FILES=/vagrant/$DATABASE_FOLDER/*.sql.bz2
+shopt -s nullglob
+for file in $BZ2_FILES
+do
+	FILENAME=`basename $file .bz2`
+	bzip2 -dkc $file > /vagrant/$DATABASE_FOLDER/$FILENAME
+	DEL_FILES+=("/vagrant/$DATABASE_FOLDER/$FILENAME")
+done;
+
 DB_FILES=/vagrant/$DATABASE_FOLDER/*.sql
 shopt -s nullglob
 for file in $DB_FILES
@@ -47,6 +54,11 @@ do
 
 	echo "Importing database dump"
 	sed '/^CREATE DATABASE/d;/^USE/d' $file | mysql $DB_NAME -u root
+done;
+
+for file in $DEL_FILES
+do
+	rm -f $file
 done;
 
 echo "Databases imported"
