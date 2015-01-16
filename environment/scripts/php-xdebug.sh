@@ -1,5 +1,8 @@
 #!/bin/bash
 
+echo "Creating xdebug log directory: /var/log/xdebug"
+mkdir /var/log/xdebug
+
 echo "Installing XDebug dependencies"
 yum install -y php-devel php-pear gcc gcc-c++ autoconf automake
 
