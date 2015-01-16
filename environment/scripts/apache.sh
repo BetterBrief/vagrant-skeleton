@@ -25,7 +25,11 @@ cp -f /vagrant/environment/config/httpd.conf /etc/httpd/conf/httpd.conf
 
 echo "Mounting webroot"
 # pick the webroot
-if [ -d /vagrant/www ]
+if [ -d /vagrant/project/public ]
+then
+	echo "Found Laravel style project/public directory, using as webroot"
+	WEBROOT="/vagrant/project/public"
+elif [ -d /vagrant/www ]
 then
 	echo "Found folder www, using as webroot"
 	WEBROOT="www"
