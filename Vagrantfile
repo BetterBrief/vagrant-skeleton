@@ -27,8 +27,9 @@ Vagrant.configure("2") do |config|
   #Install lamp and so on
   #In future will probably swap this out with something like Puppet
   config.vm.provision :shell, :path => "environment/scripts/iptables.sh"
-  config.vm.provision :shell, :path => "environment/scripts/php.sh"
+  config.vm.provision :shell, :path => "environment/scripts/php-53.sh"
   #config.vm.provision :shell, :path => "environment/scripts/php-55.sh"
+  #config.vm.provision :shell, :path => "environment/scripts/php-56.sh"
   config.vm.provision :shell, :path => "environment/scripts/apache.sh"
   #config.vm.provision :shell, :path => "environment/scripts/custom-yum-remi-repo.sh" # needed for xsendfile
   #config.vm.provision :shell, :path => "environment/scripts/apache-modxsendfile.sh"
