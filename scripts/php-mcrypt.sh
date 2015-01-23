@@ -4,11 +4,13 @@
 # Ensure you include in provisioning AFTER php.sh
 
 echo "Installing Mcrypt php extension"
-rpm -ivh http://www.mirrorservice.org/sites/dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
-yum update
-yum install -y php-mcrypt
+
+#install EPEL repo
+/vagrant/scripts/epel.sh
+
+yum install -y php-mcrypt --enablerepo=epel
 
 echo "Restarting Apache"
-/sbin/service httpd restart
+systemctl restart httpd.service
 
 echo "Mcrypt installed"

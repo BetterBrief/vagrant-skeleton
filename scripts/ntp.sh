@@ -3,9 +3,10 @@
 echo 'installing and configuring NTP'
 
 yum install -y wget ntp
-chkconfig ntpd on
+systemctl enable ntpd.service
+
 ntpdate pool.ntp.org
-/etc/init.d/ntpd start
+systemctl start ntpd
 
 
 # Set timezone
@@ -25,9 +26,9 @@ echo "tinker panic 0" >> /etc/ntp.conf
 
 # Create a script to update time. 
 cat >/usr/bin/updatetime <<EOL
-/etc/init.d/ntpd stop
+systemctl stop ntpd.service
 ntpdate pool.ntp.org
-/etc/init.d/ntpd start
+systemctl start ntpd.service
 EOL
 
 # now we can just run "updatetime" to restart and sync time servers:

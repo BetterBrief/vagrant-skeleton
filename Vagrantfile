@@ -3,16 +3,8 @@
 
 Vagrant.configure("2") do |config|
 
-  #---Puppet Lab's CentOS Boxes---
-  #https://github.com/puppetlabs/puppet-vagrant-boxes
-
   #Vanilla
-  config.vm.box = "centos-65-x64-virtualbox-nocm"
-  config.vm.box_url = "http://puppet-vagrant-boxes.puppetlabs.com/centos-65-x64-virtualbox-nocm.box"
-
-  #Puppet
-  #config.vm.box = "centos-65-x64-virtualbox-puppet"
-  #config.vm.box_url = "http://puppet-vagrant-boxes.puppetlabs.com/centos-65-x64-virtualbox-puppet.box"
+  config.vm.box = "chef/centos-7.0"
 
   #---Networking---
 
@@ -26,33 +18,22 @@ Vagrant.configure("2") do |config|
 
   #Install lamp and so on
   #In future will probably swap this out with something like Puppet
-  config.vm.provision :shell, :path => "environment/scripts/iptables.sh"
-  config.vm.provision :shell, :path => "environment/scripts/php-53.sh"
-  #config.vm.provision :shell, :path => "environment/scripts/php-55.sh"
-  #config.vm.provision :shell, :path => "environment/scripts/php-56.sh"
-  config.vm.provision :shell, :path => "environment/scripts/apache.sh"
-  #config.vm.provision :shell, :path => "environment/scripts/custom-yum-remi-repo.sh" # needed for xsendfile
-  #config.vm.provision :shell, :path => "environment/scripts/apache-modxsendfile.sh"
-  config.vm.provision :shell, :path => "environment/scripts/mysql.sh"
-  #config.vm.provision :shell, :path => "environment/scripts/mariadb-5.5.sh"
-  #config.vm.provision :shell, :path => "environment/scripts/php-geoip.sh"
-  #config.vm.provision :shell, :path => "environment/scripts/php-pear-phpunit.sh"
-  #config.vm.provision :shell, :path => "environment/scripts/php-xdebug.sh"
-  #config.vm.provision :shell, :path => "environment/scripts/php-apc.sh"
-  #config.vm.provision :shell, :path => "environment/scripts/php-mcrypt.sh"
-  #config.vm.provision :shell, :path => "environment/scripts/mongo.sh"
-  #config.vm.provision :shell, :path => "environment/scripts/php-mongo.sh"
-  #config.vm.provision :shell, :path => "environment/scripts/ntp.sh"
-  #config.vm.provision :shell, :path => "environment/scripts/node.sh"
-  #config.vm.provision :shell, :path => "environment/scripts/grunt.sh"
-  #config.vm.provision :shell, :path => "environment/scripts/grunt-watch.sh"
-  config.vm.provision :shell, :path => "environment/scripts/composer.sh"
-  #config.vm.provision :shell, :path => "environment/scripts/libjpeg-jpegoptim.sh"
-  #config.vm.provision :shell, :path => "environment/scripts/optipng.sh"
-  #config.vm.provision :shell, :path => "environment/scripts/sass.sh"
-  config.vm.provision :shell, :path => "environment/scripts/silverstripe-tasks.sh"
-  #config.vm.provision :shell, :path => "environment/scripts/sspak.sh"
-  config.vm.provision :shell, :path => "environment/scripts/bootstrap.sh"
-  config.vm.provision :shell, :path => "environment/scripts/always.sh", run: "always"
+  config.vm.provision :shell, :path => "scripts/php-54.sh"
+  #config.vm.provision :shell, :path => "scripts/php-55.sh"
+  #config.vm.provision :shell, :path => "scripts/php-56.sh"
+  config.vm.provision :shell, :path => "scripts/composer.sh"
+  config.vm.provision :shell, :path => "scripts/apache.sh"
+  config.vm.provision :shell, :path => "scripts/mariadb.sh"
+  #config.vm.provision :shell, :path => "scripts/php-mcrypt.sh"
+  #config.vm.provision :shell, :path => "scripts/ntp.sh"
+  #config.vm.provision :shell, :path => "scripts/node.sh"
+  #config.vm.provision :shell, :path => "scripts/bower.sh"
+  #config.vm.provision :shell, :path => "scripts/grunt.sh"
+  #config.vm.provision :shell, :path => "scripts/grunt-watch.sh"
+  #config.vm.provision :shell, :path => "scripts/sass.sh"
+  config.vm.provision :shell, :path => "scripts/silverstripe-tasks.sh"
+  #config.vm.provision :shell, :path => "scripts/sspak.sh"
+  config.vm.provision :shell, :path => "scripts/bootstrap.sh"
+  config.vm.provision :shell, :path => "scripts/always.sh", run: "always"
 
 end

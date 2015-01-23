@@ -1,4 +1,4 @@
 #!/bin/bash
 
 echo "starting httpd"
-service httpd start
+systemctl start httpd.service
