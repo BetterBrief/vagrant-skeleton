@@ -2,7 +2,7 @@
 
 echo "Installing SASS 3.4.10"
 echo "Ensuring Ruby (dependency) is installed and up to date"
-yum install -y ruby rubygems
+yum install -y ruby ruby-devel rubygems
 echo "Ruby check complete. Version: `ruby --version`"
 
 
