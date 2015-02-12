@@ -12,6 +12,7 @@ Vagrant.configure("2") do |config|
   config.vm.network :forwarded_port, guest: 80, host: 8080, auto_correct: true
   #config.vm.network :forwarded_port, guest: 443, host: 443, auto_correct: true
   config.vm.network :forwarded_port, guest: 3306, host: 3306, auto_correct: true
+  config.vm.network :forwarded_port, guest: 1080, host: 1080, auto_correct: true
 
   #Uncomment this if you want bridged network functionality
   #config.vm.network :public_network
@@ -33,6 +34,7 @@ Vagrant.configure("2") do |config|
   #config.vm.provision :shell, :path => "scripts/sass.sh"
   config.vm.provision :shell, :path => "scripts/silverstripe-tasks.sh"
   #config.vm.provision :shell, :path => "scripts/sspak.sh"
+  config.vm.provision :shell, :path => "scripts/mailcatcher.sh"
   config.vm.provision :shell, :path => "scripts/bootstrap.sh"
   config.vm.provision :shell, :path => "scripts/always.sh", run: "always"
 
