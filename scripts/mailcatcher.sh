@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo 'Installing ruby and sqlite'
-yum install -y ruby rubygems ruby-devel sqlite-devel
+yum install -y ruby rubygems ruby-devel sqlite-devel gcc-c++
 
 echo 'Creating pathmunge file'
 echo "#!/bin/bash" > /etc/profile.d/local-bin.sh
