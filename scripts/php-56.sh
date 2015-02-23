@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PHP_NAME="php55w"
+PHP_NAME="php56w"
 
 # declare the php modules we want
 MODULES=(common mysql gd mbstring xml)
