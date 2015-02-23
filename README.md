@@ -55,7 +55,7 @@ Edit the `Vagrantfile` to enable or disable install scripts as they are required
 |php-56.sh            |PHP                |5.6.x|Webtatic EL6|Installs PHP 5.6, restarts Apache
 |mariadb.sh           |MariaDB            |5.5|MariaDB.org|Installs MariaDB, opens port 3306, imports dumps in /vagrant/database
 |php-mcrypt.sh        |PHP Mcrypt extension|-|EPEL|Installs Mcrypt. Only needed for PHP 5.3.x as 5.5 has it built-in.
-|xdebug.sh 		      |Xdebug extension   |-|EPEL|Install Xdebug extension for debugging purposes.
+|xdebug.sh 		      |Xdebug extension   |-|PECL|Install Xdebug extension for debugging purposes.
 |ntp.sh               |ntp|-|CentOS|Installs NTP which handles time management
 |node.sh              |NodeJS|-|Fedora EPEL|Installs the NodeJS language and its package manager, NPM
 |bower.sh             |Bower|-|NPM|Installs the Bower dependency manager
