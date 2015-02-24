@@ -66,6 +66,11 @@ then
 	chown -R vagrant: /var/lib/php/session
 fi
 
+echo "Creating log directory"
+mkdir -p $LOGS
+rm -rf /var/log/httpd
+ln -s $LOGS /var/log/httpd
+
 echo "Starting httpd service"
 systemctl restart httpd.service
 

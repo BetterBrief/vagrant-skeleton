@@ -63,6 +63,10 @@ done;
 
 echo "Databases imported"
 
+echo "Creating log directory"
+mkdir -p /vagrant/logs/mariadb
+rm -rf /var/log/mariadb
+ln -s /vagrant/logs/mariadb /var/log/mariadb
 
 #Reload the database
 echo "Setting DB permissions for root"
