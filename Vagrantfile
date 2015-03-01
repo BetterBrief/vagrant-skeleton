@@ -26,6 +26,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision :shell, :path => "scripts/apache.sh"
   config.vm.provision :shell, :path => "scripts/mariadb.sh"
   #config.vm.provision :shell, :path => "scripts/php-mcrypt.sh"
+  config.vm.provision :shell, :path => "scripts/xdebug.sh"
   #config.vm.provision :shell, :path => "scripts/ntp.sh"
   #config.vm.provision :shell, :path => "scripts/node.sh"
   #config.vm.provision :shell, :path => "scripts/bower.sh"

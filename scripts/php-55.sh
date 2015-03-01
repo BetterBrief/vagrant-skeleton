@@ -3,7 +3,7 @@
 PHP_NAME="php55w"
 
 # declare the php modules we want
-MODULES=(common mysql gd mbstring xml)
+MODULES=(common mysql gd mbstring xml devel pear)
 
 /vagrant/scripts/epel.sh
 
