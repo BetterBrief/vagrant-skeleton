@@ -3,7 +3,7 @@
 PHP_NAME="php"
 
 # declare the php modules we want
-MODULES=(common mysql gd mbstring xml tidy)
+MODULES=(common mysql gd mbstring xml tidy pear devel)
 
 echo "Installing PHP and common modules"
 yum install -y $PHP_NAME ${MODULES[@]/#/$PHP_NAME-}
