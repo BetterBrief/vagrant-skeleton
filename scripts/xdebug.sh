@@ -13,8 +13,10 @@ echo "Install Xdebug"
 yum install -y gcc gcc-c++ autoconf automake --enablerepo=epel --enablerepo=webtatic
 
 pecl install Xdebug
-
-echo "[xdebug]
-zend_extension=\"/usr/lib64/php/modules/xdebug.so\"
-xdebug.remote_connect_back = 1
-xdebug.remote_enable = 1" >> /etc/php.ini
+if [ ! -f /etc/php.d/xdebug.ini ]
+then
+    echo "[xdebug]
+    zend_extension=\"/usr/lib64/php/modules/xdebug.so\"
+    xdebug.remote_connect_back = 1
+    xdebug.remote_enable = 1" >> /etc/php.d/xdebug.ini
+fi
