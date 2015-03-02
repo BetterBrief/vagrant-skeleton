@@ -8,7 +8,7 @@ echo "#!/bin/bash" > /etc/profile.d/local-bin.sh
 echo "pathmunge /usr/local/bin after" >> /etc/profile.d/local-bin.sh
 
 echo 'installing mailcatcher'
-gem install mailcatcher
+gem install -N mailcatcher
 
 echo 'enabling mailcatcher in php'
 sed -ri '/sendmail_path\s+=.*/a sendmail_path = /usr/bin/env catchmail' /etc/php.ini
