@@ -3,10 +3,15 @@
 PHP_NAME="php"
 
 # declare the php modules we want
-MODULES=(common mysql gd mbstring xml)
+MODULES=(common mysql gd mbstring xml tidy)
 
 echo "Installing PHP and common modules"
 yum install -y $PHP_NAME ${MODULES[@]/#/$PHP_NAME-}
+
+#install EPEL repo
+/vagrant/scripts/epel.sh
+
+yum install -y php-tidy --enablerepo=epel
 
 # use the dev php.ini file
 cp -f /usr/share/doc/$PHP_NAME-*/php.ini-development /etc/php.ini
