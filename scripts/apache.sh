@@ -15,7 +15,7 @@
 
 #List of valid webroots in priority order
 WEBROOTS=('/vagrant/project/public/' '/vagrant/www/' '/vagrant/public_html/' '/vagrant/webroot/' '/vagrant/public/')
-
+LOGS='/vagrant/logs/apache2'
 
 echo "Installing Apache"
 yum install -y httpd
@@ -65,6 +65,11 @@ if [ -d /var/lib/php/session ]
 then
 	chown -R vagrant: /var/lib/php/session
 fi
+
+echo "Symlinking logs to Vagrant directory"
+mkdir -p $LOGS
+rm -rf /var/log/httpd
+ln -s $LOGS /var/log/httpd
 
 echo "Starting httpd service"
 systemctl restart httpd.service
