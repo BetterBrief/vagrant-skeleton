@@ -7,7 +7,7 @@ This is the Vagrant skeleton that we use at [Better Brief](http://betterbrief.co
 
 We're using a CentOS 7 OS, image from [chef](https://vagrantcloud.com/chef/boxes/centos-7.0) (thanks)
 
-However, there shouldn't be much issue using these scrips on the following OS's:
+However, there shouldn't be much issue using these scripts on the following OS's:
 - RHEL
 - Fedora
 - Amazon Linux
