@@ -38,7 +38,7 @@ done
 if [ -z "$WEBROOT" ]
 then
 	echo "No webroot, installing SS"
-	composer create-project silverstripe/installer /vagrant/www/
+	composer create-project silverstripe/installer /vagrant/www/ --prefer-dist
 
 	#rename index.php for rewrite reasons
 	mv /vagrant/www/index.php /vagrant/www/index.bu.php
