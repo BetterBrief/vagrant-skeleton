@@ -24,6 +24,7 @@ touch /tmpxh_dot.err
 chmod 0777 /tmpxh_dot.err
 
 # sym link xhprof repo - needed to access _ss_env file
+rm -rf /var/www/xhprof
 ln -s /vagrant/xhprof/ /var/www/xhprof
 
 # add a port listener to apache for xhprof access
