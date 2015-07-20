@@ -14,4 +14,6 @@ echo "Installed SASS version: `/usr/local/bin/sass -v`"
 
 echo "Installing Compass"
 gem install -N compass -v 1.0.3
+# needed to compile core sass
+gem install -N compass-colors
 echo "Compass installed `/usr/local/bin/compass -v`"
