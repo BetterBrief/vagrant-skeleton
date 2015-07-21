@@ -38,9 +38,9 @@ done
 if [ -z "$WEBROOT" ]
 then
 	echo "No webroot, installing SS"
-	composer create-project silverstripe/installer /vagrant/www/ --prefer-dist
-
 	WEBROOT="/vagrant/www"
+
+	/vagrant/www/scripts/install-silverstripe.sh -d ${WEBROOT}
 fi
 
 if [ -d $WEBROOT ]
