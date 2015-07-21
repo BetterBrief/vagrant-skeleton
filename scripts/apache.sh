@@ -40,7 +40,7 @@ then
 	echo "No webroot, installing SS"
 	WEBROOT="/vagrant/www"
 
-	/vagrant/www/scripts/install-silverstripe.sh -d ${WEBROOT}
+	/vagrant/scripts/install-silverstripe.sh -d ${WEBROOT}
 fi
 
 if [ -d $WEBROOT ]
