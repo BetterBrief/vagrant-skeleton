@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 echo "Installing SASS 3.4.10"
 echo "Ensuring Ruby (dependency) is installed and up to date"
@@ -6,7 +6,7 @@ yum install -y ruby ruby-devel rubygems
 echo "Ruby check complete. Version: `ruby --version`"
 
 
-echo "#!/bin/bash" > /etc/profile.d/local-bin.sh
+echo "#!/usr/bin/env bash" > /etc/profile.d/local-bin.sh
 echo "pathmunge /usr/local/bin after" >> /etc/profile.d/local-bin.sh
 
 gem install -N sass -v 3.4.10

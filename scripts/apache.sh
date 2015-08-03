@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 ## TODOs ##
 # Make sure following modules are installed for html5 boilerplate htaccess #

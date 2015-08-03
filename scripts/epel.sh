@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 if [ ! -f /etc/yum.repos.d/epel.repo ]; then
 	echo "Installing Webtatic"
