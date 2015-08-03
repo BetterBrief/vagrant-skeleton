@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # For running PHPStorm or IntelliJ, follow these steps:
 # 1. Go to Settings => Language & Frameworks => PHP => Servers

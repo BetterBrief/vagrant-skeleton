@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 echo "Installing MariaDB"
 yum install -y mariadb-server

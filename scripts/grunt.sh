@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 echo "Installing Grunt & Grunt CLI by NPM"
 npm install -y -g grunt-cli

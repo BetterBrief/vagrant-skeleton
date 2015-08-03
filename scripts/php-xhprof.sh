@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Require repo deps
 /vagrant/scripts/epel.sh
