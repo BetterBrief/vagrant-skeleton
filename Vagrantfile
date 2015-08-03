@@ -24,6 +24,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision :shell, :path => "scripts/php-54.sh"
   #config.vm.provision :shell, :path => "scripts/php-55.sh"
   #config.vm.provision :shell, :path => "scripts/php-56.sh"
+  #config.vm.provision :shell, :path => "scripts/php-hhvm.sh"
   #config.vm.provision :shell, :path => "scripts/php-xhprof.sh"
   config.vm.provision :shell, :path => "scripts/composer.sh"
   #config.vm.provision :shell, :path => "scripts/install-silverstripe.sh", :args => "-v 3.x-dev"
