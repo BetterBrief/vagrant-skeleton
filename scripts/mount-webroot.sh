@@ -2,7 +2,7 @@
 
 #List of valid webroots in priority order
 WEBROOTS=('/vagrant/project/public/' '/vagrant/www/' '/vagrant/public_html/' '/vagrant/webroot/' '/vagrant/public/')
-DESTINATION=/var/www/html
+DESTINATION='/var/www/html'
 WEBROOT=''
 
 function run() {
@@ -20,10 +20,13 @@ function run() {
 		done
 	fi
 
-	if [ -d $WEBROOT ]
-	then
+	if [ -d $WEBROOT ]; then
+		#ensure the destination exists, otherwise the symlink won't work
+		if [ ! -d ${DESTINATION} ]; then
+			mkdir -p ${DESTINATION}
+		fi
 		rm -rf $DESTINATION
-		ln -s $WEBROOT $DESTINATION
+		ln -s ${WEBROOT} ${DESTINATION}
 	else
 		echo "WARNING: Couldn't find webroot"
 	fi
