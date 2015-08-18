@@ -37,6 +37,7 @@ Vagrant.configure("2") do |config|
   #config.vm.provision :shell, :path => "scripts/grunt.sh"
   #config.vm.provision :shell, :path => "scripts/grunt-watch.sh"
   #config.vm.provision :shell, :path => "scripts/sass.sh"
+  #config.vm.provision :shell, :path => "scripts/less.sh"
   config.vm.provision :shell, :path => "scripts/silverstripe-tasks.sh"
   #config.vm.provision :shell, :path => "scripts/sspak.sh"
   config.vm.provision :shell, :path => "scripts/mailcatcher.sh"
