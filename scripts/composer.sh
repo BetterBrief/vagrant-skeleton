@@ -7,6 +7,8 @@ curl -sS https://getcomposer.org/installer | php
 echo "Moving composer to make it globally accessable"
 mv composer.phar /usr/bin/composer
 
+composer config -g optimize-autoloader true
+
 echo "Adding composer's vendor directory to system PATH"
 cat >/etc/profile.d/composer-bin-root.sh <<EOF
 #!/usr/bin/env bash
