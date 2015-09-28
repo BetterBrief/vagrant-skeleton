@@ -4,7 +4,7 @@
 Vagrant.configure("2") do |config|
 
   #Vanilla
-  config.vm.box = "chef/centos-7.0"
+  config.vm.box = "bento/centos-7.1"
 
   #---Networking---
 
