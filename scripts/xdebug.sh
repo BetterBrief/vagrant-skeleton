@@ -7,7 +7,7 @@
 # 4. Apply and close settings
 # 5. Go to Run => Edit configurations
 # 6. Add a new PHP Web Application with the server you just added. The rest is trivial and free to fill.
-# 7. Aply and done!
+# 7. Apply and done!
 
 echo "Install Xdebug"
 yum install -y gcc gcc-c++ autoconf automake
