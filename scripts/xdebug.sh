@@ -29,6 +29,7 @@ if [ ! -d /vagrant/profiling ]; then
 fi
 
 #we need a bit longer to execute with profiling
+echo "NOTICE: max_execution_time has been explicitly set; ensure this does not clash with your own PHP config"
 sed -i 's/max_execution_time.*/max_execution_time = 120/g' /etc/php.ini
 
 systemctl restart httpd
