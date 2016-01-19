@@ -7,8 +7,9 @@ PHP_MODULES=(common mysql gd mbstring xml tidy pear devel)
 TZ='UTC'
 MEMORY_LIMIT=256
 QUIET=false
+EXEC_TIME=60
 
-while getopts "hqv:t:m:" OPTION; do
+while getopts "hqv:t:m:e:" OPTION; do
 	case ${OPTION} in
 		v ) if [ "${OPTARG}" == "5.4" ]; then
 				VERSION="php"
@@ -30,6 +31,8 @@ while getopts "hqv:t:m:" OPTION; do
 			;;
 		q ) QUIET=false
 			;;
+		e ) EXEC_TIME=${OPTARG}
+		    ;;
 		h ) usage
 			exit 0
 	esac
@@ -38,9 +41,10 @@ done
 function usage() {
 	echo -e "Syntax `basename $0` [-h] [-v version]
 	-h Show this help
-	-q Quient mode
+	-q Quiet mode
 	-t Timezone to use for PHP.ini
 	-m Memory limit for PHP.ini (in M)
+	-e Max execution time for PHP.ini
 	-v Set the version of PHP to install\n"
 }
 
@@ -56,6 +60,7 @@ function run() {
 	cp -f /usr/share/doc/$VERSION-*/php.ini-development /etc/php.ini
 	sed -i "s/;date\.timezone.*/date\.timezone = ${TZ}/g" /etc/php.ini
 	sed -i "s/memory_limit.*/memory_limit = ${MEMORY_LIMIT}M/g" /etc/php.ini
+	sed -i "s/max_execution_time.*/max_execution_time = ${EXEC_TIME}/g" /etc/php.ini
 
 	${QUIET} || echo "Restarting apache"
 	 if [ "`systemctl is-active httpd.service`" != "active" ]; then
