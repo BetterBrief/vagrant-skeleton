@@ -41,7 +41,7 @@ done
 function usage() {
 	echo -e "Syntax `basename $0` [-h] [-v version]
 	-h Show this help
-	-q Quient mode
+	-q Quiet mode
 	-t Timezone to use for PHP.ini
 	-m Memory limit for PHP.ini (in M)
 	-e Max execution time for PHP.ini
