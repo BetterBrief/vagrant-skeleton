@@ -33,6 +33,7 @@ Vagrant.configure("2") do |config|
   #config.vm.provision :shell, :path => "scripts/ntp.sh"
   #config.vm.provision :shell, :path => "scripts/node.sh"
   #config.vm.provision :shell, :path => "scripts/bower.sh"
+  #config.vm.provision :shell, :path => "scripts/gulp.sh"
   #config.vm.provision :shell, :path => "scripts/grunt.sh"
   #config.vm.provision :shell, :path => "scripts/grunt-watch.sh"
   #config.vm.provision :shell, :path => "scripts/sass.sh"
