@@ -2,8 +2,11 @@
 
 echo "Installing NodeJS (CentOS method)"
 
-#install EPEL repo
-/vagrant/scripts/epel.sh
-
 echo "Installing NodeJS + NPM with EPEL"
-yum install -y npm --enablerepo=epel
+
+curl --silent --location https://rpm.nodesource.com/setup_4.x | bash -
+
+yum install -y nodejs
+
+#turn off bin links by default
+npm config set bin-links false
