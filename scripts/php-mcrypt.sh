@@ -3,7 +3,7 @@
 # Mcrypt is a common dependency for 5.5+ apps, so it is installed by default with those scripts
 # Ensure you include in provisioning AFTER php.sh
 
-PACKAGE_NAME='php-'
+PACKAGE_NAME='php'
 
 echo "Installing Mcrypt php extension"
 
