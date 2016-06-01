@@ -1,11 +1,16 @@
 #!/usr/bin/env bash
 
 # Grab the installer and pipe it into PHP
-echo "Downloading composer"
-curl -sS https://getcomposer.org/installer | php
+echo "Installing composer"
 
-echo "Moving composer to make it globally accessable"
-mv composer.phar /usr/bin/composer
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+php -r "if (hash_file('SHA384', 'composer-setup.php') === '$(curl -q https://composer.github.io/installer.sig)') { echo 'Installer verified' . PHP_EOL; } else { echo 'Installer corrupt' . PHP_EOL; unlink('composer-setup.php'); exit(1); }"
+if [ $? != 0 ]; then
+	echo "Bad composer installer";
+	exit
+fi
+php composer-setup.php -- --install-dir=/usr/bin --filename=composer
+php -r "unlink('composer-setup.php');"
 
 composer config -g optimize-autoloader true
 
@@ -28,4 +33,4 @@ then
 	composer install -d /var/www/html
 else
 	echo "WARNING: There was no (readable) composer.json. Create one and run 'composer install' to install dependencies." >& 2
-fi;
+fi
