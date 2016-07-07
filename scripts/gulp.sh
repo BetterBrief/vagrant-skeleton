@@ -2,4 +2,4 @@
 
 echo "Installing Gulp"
 
-npm install --global gulp-cli --bin-links
+npm install --global --bin-links gulp-cli
