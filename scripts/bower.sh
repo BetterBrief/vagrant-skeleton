@@ -5,7 +5,7 @@
 
 # Install bower
 echo "Installing bower"
-npm install -g bower
+npm install -g --bin-links bower
 
 echo '{ "allow_root": true }' > /root/.bowerrc
 

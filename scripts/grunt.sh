@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 echo "Installing Grunt & Grunt CLI by NPM"
-npm install -g grunt-cli
+npm install -g --bin-links grunt-cli
 
 if [ -r "/var/www/html/package.json" ]
 then
