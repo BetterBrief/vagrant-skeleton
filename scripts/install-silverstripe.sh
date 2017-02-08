@@ -16,7 +16,7 @@ function usage() {
 
 function install() {
 	if [[ ! -d ${INSTALL_DIR} ]] || [[ ! $(ls -A ${INSTALL_DIR}) ]]; then
-		composer create-project ${INSTALLER_NAME} ${INSTALL_DIR} ${INSTALL_VERSION}
+		composer create-project --no-progress --no-ansi -n ${INSTALLER_NAME} ${INSTALL_DIR} ${INSTALL_VERSION}
 	else
 		echo "WARNING: Install directory is not empty; not installing"
 	fi
