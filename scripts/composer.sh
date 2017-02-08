@@ -30,7 +30,7 @@ yum install -y git
 if [ -r "/var/www/html/composer.json" ]
 then
 	echo "Installing declared packages from composer.json"
-	composer install -d /var/www/html
+	composer install --no-ansi -n --no-progress --no-suggest -d /var/www/html
 else
 	echo "WARNING: There was no (readable) composer.json. Create one and run 'composer install' to install dependencies." >& 2
 fi
