@@ -3,7 +3,7 @@
 VERSION="php"
 VERSION_STRING="5.4"
 USE_EPEL=false
-PHP_MODULES=(common mysql gd mbstring xml tidy pear devel)
+PHP_MODULES=(common mysql gd mbstring xml tidy pear intl devel)
 TZ='UTC'
 MEMORY_LIMIT=256
 QUIET=false
