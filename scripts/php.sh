@@ -4,6 +4,7 @@ VERSION="php"
 VERSION_STRING="5.4"
 USE_EPEL=false
 PHP_MODULES=(common mysql gd mbstring xml tidy pear intl devel)
+EXTRA_PACKAGES=()
 TZ='UTC'
 MEMORY_LIMIT=256
 QUIET=false
@@ -18,6 +19,15 @@ while getopts "hqv:t:m:e:" OPTION; do
 				USE_EPEL=true
 			elif [ "${OPTARG}" == "5.6" ]; then
 				VERSION="php56w"
+				USE_EPEL=true
+			elif [ "${OPTARG}" == "7.0" ]; then
+				VERSION="php70w"
+				PHP_MODULES+=('opcache')
+				USE_EPEL=true
+			elif [ "${OPTARG}" == "7.1" ]; then
+				VERSION="php71w"
+				PHP_MODULES+=('opcache')
+				EXTRA_PACKAGES+=('mod_php71w')
 				USE_EPEL=true
 			else
 				${QUIET} || >&2 echo "Unsupported PHP version '${OPTARG}'"
@@ -52,9 +62,9 @@ function run() {
 	${QUIET} || echo "Installing PHP ${VERSION_STRING} (${VERSION})"
 	/vagrant/scripts/epel.sh
 	if [ ${USE_EPEL} == true ]; then
-		yum install -y $VERSION ${PHP_MODULES[@]/#/$VERSION-} --enablerepo=epel --enablerepo=webtatic
+		yum install -y $VERSION ${EXTRA_PACKAGES[@]} ${PHP_MODULES[@]/#/$VERSION-} --enablerepo=epel --enablerepo=webtatic
 	else
-		yum install -y $VERSION ${PHP_MODULES[@]/#/$VERSION-}
+		yum install -y $VERSION ${EXTRA_PACKAGES[@]} ${PHP_MODULES[@]/#/$VERSION-}
 		yum install -y php-tidy --enablerepo=epel
 	fi
 	cp -f /usr/share/doc/$VERSION-*/php.ini-development /etc/php.ini
