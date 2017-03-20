@@ -47,7 +47,7 @@ Vagrant.configure("2") do |config|
   #Install lamp and so on
   #In future will probably swap this out with something like Puppet
   config.vm.provision :shell, :path => "scripts/mount-webroot.sh"
-  config.vm.provision :shell, :path => "scripts/php.sh", :args => "-v 5.4 -m 256 -t UTC"
+  config.vm.provision :shell, :path => "scripts/php.sh", :args => "-v 5.6 -m 256 -t UTC"
   #config.vm.provision :shell, :path => "scripts/php-mcrypt.sh"
   #config.vm.provision :shell, :path => "scripts/php-xhprof.sh"
   config.vm.provision :shell, :path => "scripts/composer.sh"
