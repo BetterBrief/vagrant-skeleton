@@ -19,4 +19,4 @@ define('SS_DEFAULT_ADMIN_USERNAME', 'admin');
 define('SS_DEFAULT_ADMIN_PASSWORD', 'password');
 
 global $_FILE_TO_URL_MAPPING;
-$_FILE_TO_URL_MAPPING['/vagrant/www'] = 'http://localhost';
+$_FILE_TO_URL_MAPPING[__DIR__] = 'http://localhost';
