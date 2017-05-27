@@ -5,7 +5,7 @@ Vagrant.configure("2") do |config|
 
   #---Box config---
 
-  config.vm.box = "bento/centos-7.2"
+  config.vm.box = "bento/centos-7.3"
 
   config.vm.provider 'virtualbox' do |v|
     v.linked_clone = true if Vagrant::VERSION =~ /^1.8/
