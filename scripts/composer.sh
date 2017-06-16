@@ -20,6 +20,9 @@ cat >/etc/profile.d/composer-bin-root.sh <<EOF
 
 pathmunge /home/vagrant/.composer/vendor/bin after
 pathmunge /root/.composer/vendor/bin after
+
+export COMPOSER_ALLOW_SUPERUSER=1
+
 EOF
 
 echo "Composer installed"
