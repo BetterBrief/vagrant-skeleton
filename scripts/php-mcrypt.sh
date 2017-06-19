@@ -14,6 +14,9 @@ if `php -v | grep -Eq 'PHP 5.5'`; then
 	PACKAGE_NAME='php55w'
 elif `php -v | grep -Eq 'PHP 5.6'`; then
 	PACKAGE_NAME='php56w'
+elif `php -v | grep -Eq 'PHP 7.'`; then
+        echo "Skipping Mcrypt installation on PHP 7"
+        exit 0
 fi
 
 yum install -y "${PACKAGE_NAME}-mcrypt" --enablerepo=epel --enablerepo=webtatic
