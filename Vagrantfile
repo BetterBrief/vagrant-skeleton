@@ -8,7 +8,7 @@ Vagrant.configure("2") do |config|
   config.vm.box = "bento/centos-7.3"
 
   config.vm.provider 'virtualbox' do |v|
-    v.linked_clone = true if Vagrant::VERSION =~ /^1.8/
+    v.linked_clone = true if Gem::Version.new(Vagrant::VERSION) >= Gem::Version.new('1.8.0') 
   end
 
   #---Cachier plugin---
