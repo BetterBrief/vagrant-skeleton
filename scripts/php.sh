@@ -29,6 +29,11 @@ while getopts "hqv:t:m:e:" OPTION; do
 				PHP_MODULES+=('opcache')
 				EXTRA_PACKAGES+=('mod_php71w')
 				USE_EPEL=true
+			elif [ "${OPTARG}" == "7.2" ] || [ "${OPTARG}" == "7" ]; then
+				VERSION="php72w"
+				PHP_MODULES+=('opcache')
+				EXTRA_PACKAGES+=('mod_php72w')
+				USE_EPEL=true
 			else
 				${QUIET} || >&2 echo "Unsupported PHP version '${OPTARG}'"
 				exit 1
