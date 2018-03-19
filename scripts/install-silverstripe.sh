@@ -39,4 +39,4 @@ while getopts "hv:d:i:w" OPTION; do
 done
 
 install
-/vagrant/scripts/mount-webroot.sh -w "${INSTALL_DIR}"
+/vagrant/scripts/mount-webroot.sh
