@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-INSTALL_DIR=/vagrant/www/ # The directory to install silverstripe into
+INSTALL_DIR=/vagrant/project # The directory to install silverstripe into
 INSTALL_DESTINATION=/var/www/html # The directory to symlink the install dir to. Pass an empty -w flag to avoid symlink
 INSTALL_VERSION='' # The version constraint we want, by default it will be latest stable
 INSTALLER_NAME='silverstripe/installer' # The composer installer name, this could be changed to a custom one if needed
