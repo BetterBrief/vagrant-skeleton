@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 #List of valid webroots in priority order
-WEBROOTS=('/vagrant/project/public/' '/vagrant/www/' '/vagrant/public_html/' '/vagrant/webroot/' '/vagrant/public/')
+WEBROOTS=('/vagrant/project/public/' '/vagrant/www/' '/vagrant/public_html/' '/vagrant/webroot/' '/vagrant/public/' '/vagrant/project')
 DESTINATION='/var/www/html'
 WEBROOT=''
 
