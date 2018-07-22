@@ -54,5 +54,11 @@ if (!defined('SS_DEFAULT_ADMIN_PASSWORD')) {
 	define('SS_DEFAULT_ADMIN_PASSWORD', 'password');
 }
 
-global $_FILE_TO_URL_MAPPING;
-$_FILE_TO_URL_MAPPING['/vagrant/www'] = 'http://localhost';
+
+foreach (array('project/public', 'www', 'public_html', 'weroot', 'public', 'project') as $webrootDir) {
+	if (file_exists($webrootPath = $currentDir . DIRECTORY_SEPARATOR . $webrootDir)) {
+		global $_FILE_TO_URL_MAPPING;
+		$_FILE_TO_URL_MAPPING[$webrootPath] = 'http://localhost';
+		break;
+	}
+}
