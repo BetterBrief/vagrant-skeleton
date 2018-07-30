@@ -1,7 +1,9 @@
 Vagrant Skeleton
 ======================
 
-This is the Vagrant skeleton that we use at [Better Brief](http://betterbrief.co.uk). It's meant to form a "as close as possible" base to our live servers to keep fragmentation of environments to a minimum. There is obviously the advantage of easily portable development environments!
+A bare bones repository to form a "as close as possible" base to a sensibly-configured live server to keep fragmentation of environments to a minimum. There is obviously the advantage of easily portable development environments!
+
+This is a Vagrant skeleton that we used at Better Brief. It still gets used regularly so it's still somewhat regularly maintained.
 
 ## Guest OS
 
