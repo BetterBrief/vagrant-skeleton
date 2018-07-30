@@ -3,6 +3,10 @@
 
 Vagrant.configure("2") do |config|
 
+  #---Minimum version for the bento/centos-7 box---
+
+  Vagrant.require_version ">= 2.1.0"
+
   #---Box config---
 
   config.vm.box = "bento/centos-7"
