@@ -20,6 +20,8 @@ PASSWORD=$(grep 'temporary password' /var/log/mysqld.log | sed 's/.* //g')
 echo "Root password: ${PASSWORD}"
 
 # Update password so it's not expired; remove password validator plugin, remove password
+# We have to login with the temp password, change it to something new (that satisfies the password validator),
+# then remove the validator and remove the password
 mysql -p"${PASSWORD}" --connect-expired-password -e \
  "ALTER USER USER() IDENTIFIED BY '@JCQZQBgZwY4S0e*KbxU'; UNINSTALL PLUGIN validate_password; ALTER USER USER() IDENTIFIED BY '';" || \
  echo "NOTICE: unable to update password, maybe this has been done before"
